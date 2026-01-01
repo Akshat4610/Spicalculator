@@ -132,9 +132,13 @@
 
             var msg = document.getElementById("resultMsg");
 
-            if (spi >= 5) {
+            if (spi >= 3.5) {
                 document.getElementById("resultMsg").innerText = "🎉Congratulation !You Have Passed Exam...";
+                let card = document.getElementById("resultCard");
                 msg.style.color = "lightgreen";
+                card.style.display = "block";
+                card.style.background = "#4CAF50";
+                card.innerText = "Congrats " + name + " ! 🎉 You scored " + spi;
                 confetti({
                     particleCount: 500,
                     spread: 70,
@@ -142,8 +146,12 @@
                 });
             }
             else {
-                document.getElementById("resultMsg").innerText = "You needs improvement !.Better Luck Next Time!🤞👍";
+                document.getElementById("resultMsg").innerText = "You needs improvement! Better Luck Next Time!🤞👍";
                 msg.style.color = "red";
+                let card = document.getElementById("resultCard");
+                card.style.display = "block";
+                card.style.background = "#f44336";
+                card.innerText = "You scored " + spi + " Keep trying " + name + " ! You will get success👍...";
             }
         }
         function downloadPDF() {
@@ -184,6 +192,7 @@
 
             doc.save('SPI_Result.pdf');
         }
+
     </script>
 
 </head>
@@ -246,6 +255,10 @@
     <div id="resultMsg" style="text-align:center;font-size:18px;margin-top:15px;font-weight:bold;"></div>
     <button onclick="My_function()">Input Approx Marks...</button>
     <button onclick="downloadPDF()">Download PDF</button>
+    <div id="resultCard"
+        style="display:none; text-align: center; padding:20px; border-radius:10px; margin-top:20px; font-size:18px; font-weight:bold;">
+    </div>
+
 
 
     <h3>Note : </h3>
