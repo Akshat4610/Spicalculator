@@ -78,6 +78,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 
     <script>
         function getGradePoint(totalMarks, maxMarks) {
@@ -120,20 +122,24 @@
             var gp6 = getGradePoint(total_bcps, 130);
             var gp7 = getGradePoint(total_yoga, 50);
 
-
             totalGP = gp1 * 4 + gp2 * 4 + gp3 * 3 + gp4 * 3 + gp5 * 2 + gp6 * 1 + gp7 * 1;
             totalCredits = 4 + 4 + 3 + 3 + 2 + 1 + 1;
 
-            let spi = totalGP / totalCredits;
-            document.getElementById("spi").innerHTML = "<strong>" + spi.toFixed(2) + "</strong>";
+            var spi = (totalGP / totalCredits).toFixed(2);
+            document.getElementById("spi").innerHTML = spi;
+            alert("Your SPI is: " + spi);
 
-            alert("Your SPI is: " + spi.toFixed(2));
 
             var msg = document.getElementById("resultMsg");
 
             if (spi >= 5) {
                 document.getElementById("resultMsg").innerText = "🎉Congratulation !You Have Passed Exam...";
                 msg.style.color = "lightgreen";
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
             }
             else {
                 document.getElementById("resultMsg").innerText = "You needs improvement !.Better Luck Next Time!🤞👍";
