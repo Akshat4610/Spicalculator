@@ -132,6 +132,21 @@
 
             var msg = document.getElementById("resultMsg");
 
+            function startConfetti() {
+                confettiInterval = setInterval(() => {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                }, 300);
+            }
+
+            function stopConfetti() {
+                clearInterval(confettiInterval);
+            }
+
+
             if (spi >= 3.5) {
                 document.getElementById("resultMsg").innerText = "🎉Congratulation !You Have Passed Exam...";
                 let card = document.getElementById("resultCard");
@@ -139,11 +154,10 @@
                 card.style.display = "block";
                 card.style.background = "#4CAF50";
                 card.innerText = "Congrats " + name + " ! 🎉 You scored " + spi;
-                confetti({
-                    particleCount: 500,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
+                var sound = document.getElementById("resultSound");
+                sound.play();
+                startConfetti();
+                setTimeout(stopConfetti, 8000);
             }
             else {
                 document.getElementById("resultMsg").innerText = "You needs improvement! Better Luck Next Time!🤞👍";
@@ -153,6 +167,7 @@
                 card.style.background = "#f44336";
                 card.innerText = "You scored " + spi + " Keep trying " + name + " ! You will get success👍...";
             }
+
         }
         function downloadPDF() {
             const { jsPDF } = window.jspdf;
@@ -258,6 +273,10 @@
     <div id="resultCard"
         style="display:none; text-align: center; padding:20px; border-radius:10px; margin-top:20px; font-size:18px; font-weight:bold;">
     </div>
+    <audio id="resultSound">
+        <source src="success 3.mp3" type="audio/mpeg">
+    </audio>
+
 
 
 
