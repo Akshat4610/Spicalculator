@@ -106,40 +106,116 @@
                 { m7: "Yoga & Fitness", maxTotal: 50, fixed: 22, credit: 1 }
             ];
             var name = document.getElementById("n1").innerHTML = prompt("Enter Your Name:");
+            if (name === null || name.trim() === "") {
+                alert("Name cannot be empty. Please enter your name.");
+                return;
+            }
             var mid_math = parseFloat(prompt("Enter your Mathematics I MId sem marks (out of 40):"));
-            var end_math = parseFloat(prompt("Enter your Mathematics I End sem marks (out of 60):"));
-            var total_math = mid_math + end_math + 25;
-            document.getElementById("m1").innerHTML = total_math;
-            var mid_fop = parseFloat(prompt("Enter your FOP MId sem marks (out of 50):"));
-            var end_fop = parseFloat(prompt("Enter your FOP End sem marks (out of 60):"));
-            var total_fop = mid_fop + end_fop + 40;
-            document.getElementById("m2").innerHTML = total_fop;
-            var mid_phy = parseFloat(prompt("Enter your Engineering Physics MId sem marks (out of 50):"));
-            var end_phy = parseFloat(prompt("Enter your Engineering Physics End sem marks (out of 60):"));
-            var total_phy = mid_phy + end_phy + 40;
-            document.getElementById("m3").innerHTML = total_phy;
-            var mid_bme = parseFloat(prompt("Enter your BME MId sem marks (out of 50):"));
-            var end_bme = parseFloat(prompt("Enter your BME End sem marks (out of 60):"));
-            var total_bme = mid_bme + end_bme + 40;
-            document.getElementById("m4").innerHTML = total_bme;
-            var mid_beee = parseFloat(prompt("Enter your BEEE MId sem marks (out of 50):"));
-            var end_beee = parseFloat(prompt("Enter your BEEE End sem marks (out of 60):"));
-            var total_beee = mid_beee + end_beee + 40;
-            document.getElementById("m5").innerHTML = total_beee;
-            var mid_bcps = parseFloat(prompt("Enter your BCPS MId sem marks (out of 40):"));
-            var end_bcps = parseFloat(prompt("Enter your BCPS End sem marks (out of 60):"));
-            var total_bcps = mid_bcps + end_bcps + 25;
-            document.getElementById("m6").innerHTML = total_bcps;
-            var end_yoga = parseFloat(prompt("Enter your Yoga & Fitness MId sem marks (out of 15):"));
-            var total_yoga = end_yoga + 22;
-            document.getElementById("m7").innerHTML = total_yoga;
-
-            if (isNaN(mid_math) || isNaN(end_math) || isNaN(mid_fop) || isNaN(end_fop) || isNaN(mid_phy) || isNaN(end_phy) || isNaN(mid_bme) || isNaN(end_bme) || isNaN(mid_beee) || isNaN(end_beee) || isNaN(mid_bcps) || isNaN(end_bcps) || isNaN(end_yoga) || mid_math < 0 || end_math < 0 || mid_fop < 0 || end_fop < 0 || mid_phy < 0 || end_phy < 0 || mid_bme < 0 || end_bme < 0 || mid_beee < 0 || end_beee < 0 || mid_bcps < 0 || end_bcps < 0 || end_yoga < 0 || mid_math > 40 || end_math > 60 || mid_fop > 40 || end_fop > 60 || mid_phy > 40 || end_phy > 60 || mid_bme > 40 || end_bme > 60 || mid_beee > 40 || end_beee > 60 || mid_bcps > 40 || end_bcps > 60 || end_yoga > 20) {
-                alert("Please enter valid marks...");
+            if (mid_math > 40 || isNaN(mid_math)) {
+                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
                 return;
             }
+            var end_math = parseFloat(prompt("Enter your Mathematics I End sem marks (out of 60):"));
+            if (end_math > 60 || isNaN(end_math)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_math = mid_math + end_math + 25;
+            document.getElementById("m1").innerHTML = total_math;
+            var mid_fop = parseFloat(prompt("Enter your FOP MId sem marks (out of 40):"));
+            if (mid_fop > 50 || isNaN(mid_fop)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var end_fop = parseFloat(prompt("Enter your FOP End sem marks (out of 60):"));
+            if (end_fop > 60 || isNaN(end_fop)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_fop = mid_fop + end_fop + 40;
+            document.getElementById("m2").innerHTML = total_fop;
+            var mid_phy = parseFloat(prompt("Enter your Engineering Physics MId sem marks (out of 40):"));
+            if (mid_phy > 40 || isNaN(mid_phy)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var end_phy = parseFloat(prompt("Enter your Engineering Physics End sem marks (out of 60):"));
+            if (end_phy > 60 || isNaN(end_phy)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_phy = mid_phy + end_phy + 40;
+            document.getElementById("m3").innerHTML = total_phy;
+            var mid_bme = parseFloat(prompt("Enter your BME MId sem marks (out of 40):"));
+            if (mid_bme > 40 || isNaN(mid_bme)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var end_bme = parseFloat(prompt("Enter your BME End sem marks (out of 60):"));
+            if (end_bme > 60 || isNaN(end_bme)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_bme = mid_bme + end_bme + 40;
+            document.getElementById("m4").innerHTML = total_bme;
+            var mid_beee = parseFloat(prompt("Enter your BEEE MId sem marks (out of 40):"));
+            if (mid_beee > 40 || isNaN(mid_beee)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var end_beee = parseFloat(prompt("Enter your BEEE End sem marks (out of 60):"));
+            if (end_beee > 60 || isNaN(end_beee)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_beee = mid_beee + end_beee + 40;
+            document.getElementById("m5").innerHTML = total_beee;
+            var mid_bcps = parseFloat(prompt("Enter your BCPS MId sem marks (out of 40):"));
+            if (mid_bcps > 40 || isNaN(mid_bcps)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var end_bcps = parseFloat(prompt("Enter your BCPS End sem marks (out of 60):"));
+            if (end_bcps > 60 || isNaN(end_bcps)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_bcps = mid_bcps + end_bcps + 25;
+            document.getElementById("m6").innerHTML = total_bcps;
+            var end_yoga = parseFloat(prompt("Enter your Yoga & Fitness MId sem marks (out of 20):"));
+            if (end_yoga > 20 || isNaN(end_yoga)) {
+                alert("Please Enter Valid Marks...");
+                var sound = document.getElementById("failSound");
+                sound.play();
+                return;
+            }
+            var total_yoga = end_yoga + 22;
+            document.getElementById("m7").innerHTML = total_yoga;
+
             var gp1 = getGradePoint(total_math, 130);
             var gp2 = getGradePoint(total_fop, 150);
             var gp3 = getGradePoint(total_phy, 150);
