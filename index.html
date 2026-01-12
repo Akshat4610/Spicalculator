@@ -74,6 +74,37 @@
             transform: scale(1.01);
             transition: 0.3s;
         }
+
+        #errorMsg {
+            color: black;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: shake 0.5s;
+
+            @keyframes shake {
+                0% {
+                    transform: translateX(0);
+                }
+
+                25% {
+                    transform: translateX(-5px);
+                }
+
+                50% {
+                    transform: translateX(5px);
+                }
+
+                75% {
+                    transform: translateX(-5px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -108,23 +139,29 @@
 
             var name = document.getElementById("n1").innerHTML = prompt("Enter Your Name:");
             if (name === null || name.trim() === "") {
-                MessageChannel("Name cannot be empty. Please enter your name.");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Name cannot be empty. Please enter your name.";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var mid_math = parseFloat(prompt("Enter your Mathematics I MId sem marks (out of 40):"));
             if (mid_math > 40 || isNaN(mid_math)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_math = parseFloat(prompt("Enter your Mathematics I End sem marks (out of 60):"));
             if (end_math > 60 || isNaN(end_math)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_math = mid_math + end_math + 25;
@@ -132,16 +169,20 @@
 
             var mid_fop = parseFloat(prompt("Enter your FOP MId sem marks (out of 40):"));
             if (mid_fop > 50 || isNaN(mid_fop)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_fop = parseFloat(prompt("Enter your FOP End sem marks (out of 60):"));
             if (end_fop > 60 || isNaN(end_fop)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_fop = mid_fop + end_fop + 40;
@@ -149,16 +190,20 @@
 
             var mid_phy = parseFloat(prompt("Enter your Engineering Physics MId sem marks (out of 40):"));
             if (mid_phy > 40 || isNaN(mid_phy)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_phy = parseFloat(prompt("Enter your Engineering Physics End sem marks (out of 60):"));
             if (end_phy > 60 || isNaN(end_phy)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_phy = mid_phy + end_phy + 40;
@@ -166,16 +211,20 @@
 
             var mid_bme = parseFloat(prompt("Enter your BME MId sem marks (out of 40):"));
             if (mid_bme > 40 || isNaN(mid_bme)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_bme = parseFloat(prompt("Enter your BME End sem marks (out of 60):"));
             if (end_bme > 60 || isNaN(end_bme)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_bme = mid_bme + end_bme + 40;
@@ -183,16 +232,20 @@
 
             var mid_beee = parseFloat(prompt("Enter your BEEE MId sem marks (out of 40):"));
             if (mid_beee > 40 || isNaN(mid_beee)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_beee = parseFloat(prompt("Enter your BEEE End sem marks (out of 60):"));
             if (end_beee > 60 || isNaN(end_beee)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_beee = mid_beee + end_beee + 40;
@@ -200,16 +253,20 @@
 
             var mid_bcps = parseFloat(prompt("Enter your BCPS MId sem marks (out of 40):"));
             if (mid_bcps > 40 || isNaN(mid_bcps)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var end_bcps = parseFloat(prompt("Enter your BCPS End sem marks (out of 60):"));
             if (end_bcps > 60 || isNaN(end_bcps)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_bcps = mid_bcps + end_bcps + 25;
@@ -217,9 +274,11 @@
 
             var end_yoga = parseFloat(prompt("Enter your Yoga & Fitness MId sem marks (out of 20):"));
             if (end_yoga > 20 || isNaN(end_yoga)) {
-                alert("Please Enter Valid Marks...");
                 var sound = document.getElementById("failSound");
                 sound.play();
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please Enter Valid Marks...";
+                errorMsg.style.background = "#f44336";
                 return;
             }
             var total_yoga = end_yoga + 22;
@@ -390,6 +449,7 @@
     <audio id="failSound">
         <source src="fail sound.mp3" type="audio/mpeg">
     </audio>
+    <div id="errorMsg"></div>
 
 
 
