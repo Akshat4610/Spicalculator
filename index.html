@@ -105,6 +105,7 @@
                 { m6: "BCPS", maxTotal: 130, fixed: 25, credit: 1 },
                 { m7: "Yoga & Fitness", maxTotal: 50, fixed: 22, credit: 1 }
             ];
+
             var name = document.getElementById("n1").innerHTML = prompt("Enter Your Name:");
             if (name === null || name.trim() === "") {
                 alert("Name cannot be empty. Please enter your name.");
@@ -126,6 +127,7 @@
             }
             var total_math = mid_math + end_math + 25;
             document.getElementById("m1").innerHTML = total_math;
+
             var mid_fop = parseFloat(prompt("Enter your FOP MId sem marks (out of 40):"));
             if (mid_fop > 50 || isNaN(mid_fop)) {
                 alert("Please Enter Valid Marks...");
@@ -142,6 +144,7 @@
             }
             var total_fop = mid_fop + end_fop + 40;
             document.getElementById("m2").innerHTML = total_fop;
+
             var mid_phy = parseFloat(prompt("Enter your Engineering Physics MId sem marks (out of 40):"));
             if (mid_phy > 40 || isNaN(mid_phy)) {
                 alert("Please Enter Valid Marks...");
@@ -158,6 +161,7 @@
             }
             var total_phy = mid_phy + end_phy + 40;
             document.getElementById("m3").innerHTML = total_phy;
+
             var mid_bme = parseFloat(prompt("Enter your BME MId sem marks (out of 40):"));
             if (mid_bme > 40 || isNaN(mid_bme)) {
                 alert("Please Enter Valid Marks...");
@@ -174,6 +178,7 @@
             }
             var total_bme = mid_bme + end_bme + 40;
             document.getElementById("m4").innerHTML = total_bme;
+
             var mid_beee = parseFloat(prompt("Enter your BEEE MId sem marks (out of 40):"));
             if (mid_beee > 40 || isNaN(mid_beee)) {
                 alert("Please Enter Valid Marks...");
@@ -190,6 +195,7 @@
             }
             var total_beee = mid_beee + end_beee + 40;
             document.getElementById("m5").innerHTML = total_beee;
+
             var mid_bcps = parseFloat(prompt("Enter your BCPS MId sem marks (out of 40):"));
             if (mid_bcps > 40 || isNaN(mid_bcps)) {
                 alert("Please Enter Valid Marks...");
@@ -206,6 +212,7 @@
             }
             var total_bcps = mid_bcps + end_bcps + 25;
             document.getElementById("m6").innerHTML = total_bcps;
+
             var end_yoga = parseFloat(prompt("Enter your Yoga & Fitness MId sem marks (out of 20):"));
             if (end_yoga > 20 || isNaN(end_yoga)) {
                 alert("Please Enter Valid Marks...");
