@@ -108,7 +108,9 @@
 
             var name = document.getElementById("n1").innerHTML = prompt("Enter Your Name:");
             if (name === null || name.trim() === "") {
-                alert("Name cannot be empty. Please enter your name.");
+                MessageChannel("Name cannot be empty. Please enter your name.");
+                var sound = document.getElementById("failSound");
+                sound.play();
                 return;
             }
             var mid_math = parseFloat(prompt("Enter your Mathematics I MId sem marks (out of 40):"));
