@@ -146,6 +146,10 @@
                 errorMsg.style.background = "#f44336";
                 return;
             }
+            if (name == "Shubham" || name == "shubham" || name == "SHUBHAM" || name == "Shubham Shah" || name == "SHUBHAM SHAH" || name == "SHAH SHUBHAM" || name == "Shah Shubham" || name == "Shah shubham" || name == "Nihal" || name == "nihal" || name == "NIHAL" || name == "Nihal Shah" || name == "NIHAL SHAH" || name == "SHAH NIHAL" || name == "Shah Nihal" || name == "Shah nihal" || name == "Chehar" || name == "chehar" || name == "CHEHAR" || name == "Chehar Desai" || name == "Chehar desai" || name == "CHEHAR DESAI" || name == "desai chehar" || name == "Desai Chehar" || name == "Desai chehar") {
+                var sound = document.getElementById("name");
+                sound.play();
+            }
             var mid_math = parseFloat(prompt("Enter your Mathematics I MId sem marks (out of 40):"));
             if (mid_math > 40 || isNaN(mid_math)) {
                 var sound = document.getElementById("failSound");
@@ -297,7 +301,7 @@
 
             var spi = (totalGP / totalCredits).toFixed(2);
             document.getElementById("spi").innerHTML = spi;
-            alert("Your SPI is: " + spi);
+
 
 
             var msg = document.getElementById("resultMsg");
@@ -450,6 +454,9 @@
         <source src="fail sound.mp3" type="audio/mpeg">
     </audio>
     <div id="errorMsg"></div>
+    <audio id="name">
+        <source src="name.mp3" type="audio/mpeg">
+    </audio>
 
 
 
